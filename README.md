@@ -1,10 +1,14 @@
-<h1 align="center">부동산 매물 사이트🏠</h1>
-
 <p align="center">
-  <img width="600px;" src="https://user-images.githubusercontent.com/59414210/106365481-3f5a3080-6379-11eb-8869-82fead75d734.png" />
-</p>
-
-<br>
+  <img width="600px;" src="https://user-images.githubusercontent.com/59414210/106365568-bee7ff80-6379-11eb-82ca-99c8b7d1c444.png" />
+  <br/>부동산 매물 정보 사이트🏠
+  <p align="center">
+  <img src="https://img.shields.io/badge/Vue.js-v4.5.10-green?logo=vue.js" />
+  <img src="https://img.shields.io/badge/BootStrap-v3.3.2-green?logo=bootstrap" />
+  <img src="https://img.shields.io/badge/Spring%20Legacy-v3.9.15-blue?logo=spring" />
+  <img src="https://img.shields.io/badge/AWS%20RDS----blue?logo=amazon" />
+  <img src="https://img.shields.io/badge/MySQL-v8.0-blue?logo=mysql" />
+  </p>
+</p>  
 
 > 프로젝트 기간: 11/19 - 11/26  
 > [프로젝트 일정표 바로가기](https://www.notion.so/HAPPY-HOUSE-520ad8fe139b47db8c18fb1d4c90b9d8)     

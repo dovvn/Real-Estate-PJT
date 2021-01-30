@@ -13,9 +13,6 @@
 > 프로젝트 기간: 11/19 - 11/26  
 > [프로젝트 일정표 바로가기](https://www.notion.so/HAPPY-HOUSE-520ad8fe139b47db8c18fb1d4c90b9d8)     
 
-![VueJS](https://img.shields.io/badge/Vue.js-v4.5.10-green?logo=vue.js)
-![BootStrap](https://img.shields.io/badge/BootStrap-v3.3.2-green?logo=bootstrap) ![Java](https://img.shields.io/badge/Java-v1.8-blue?logo=java) ![Spring Legacy](https://img.shields.io/badge/Spring%20Legacy-v3.9.15-blue?logo=spring) ![AWS RDS](https://img.shields.io/badge/AWS%20RDS----blue?logo=amazon) ![MySQL](https://img.shields.io/badge/MySQL-v8.0-blue?logo=mysql)   
-
 
 ## 서비스 개요
 거주하는 지역과 주거형태를 선택 후 검색하여 지도를 통해 매물 정보를 확인하고 근처 진료소,병원,근처 부동산,정류소 등의 생활시설 정보와 치안 안전 등급을 제공받아 보다 안전한 매물을 찾을 수 있도록 도와주는 부동산 서비스입니다.
@@ -56,7 +53,7 @@
   >
   > c. 사용자가 **찜한 매물 리스트**를 한눈에 관리할 수 있습니다.  
   > 
-  > d. 관리자와 **실시간 1:1 채팅 상담**을 통해 문의 시간 단축해준다.
+  > d. 관리자와 **실시간 1:1 채팅 상담**을 통해 문의 시간 단축해준다.  
  
 
 ## 서비스 구성

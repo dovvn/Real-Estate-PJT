@@ -1,6 +1,7 @@
 # 🏠 부동산 매물 사이트 
 > 프로젝트 기간: 11/19 - 11/26  
-> [프로젝트 일정표 바로가기](https://www.notion.so/HAPPY-HOUSE-520ad8fe139b47db8c18fb1d4c90b9d8)    
+> [프로젝트 일정표 바로가기](https://www.notion.so/HAPPY-HOUSE-520ad8fe139b47db8c18fb1d4c90b9d8)     
+
 ![VueJS](https://img.shields.io/badge/Vue.js-v4.5.10-green?logo=vue.js)
 ![BootStrap](https://img.shields.io/badge/BootStrap-v3.3.2-green?logo=bootstrap) ![Java](https://img.shields.io/badge/Java-v1.8-blue?logo=java) ![Spring Legacy](https://img.shields.io/badge/Spring%20Legacy-v3.9.15-blue?logo=spring) ![AWS RDS](https://img.shields.io/badge/AWS%20RDS----blue?logo=amazon) ![MySQL](https://img.shields.io/badge/MySQL-v8.0-blue?logo=mysql)   
 

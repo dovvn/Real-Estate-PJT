@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.ChatMapper">
+	<select id="getChatListByID" parameterType="ChatDto" resultType="ChatDto"> 
+		SELECT chatID, fromID, toID, chatContent, date_format(chatTime, '%h:%m%p') as chatTime FROM CHAT WHERE ((fromID = #{fromID} AND toID = #{toID}))
+		OR ((fromID = #{toID} AND toID = #{fromID})) ORDER BY chatTime
+	</select>
+	
+	<select id="chatLoadNewMessage" parameterType="ChatDto" resultType="ChatDto"> 
+		SELECT chatID, fromID, toID, chatContent, date_format(chatTime, '%h:%m%p') as chatTime FROM CHAT WHERE ((fromID = #{fromID} AND toID = #{toID})
+		OR (fromID = #{toID} AND toID = #{fromID} ))
+		AND chatID > #{chatID} ORDER BY chatTime
+	</select>
+	
+	<insert id="submit" parameterType="ChatDto">
+		INSERT INTO CHAT 
+		(fromID, toID, chatContent, chatTime)
+		VALUES(#{fromID},#{toID},#{chatContent},NOW())
+	</insert>
+	
+	
+	<select id="getRoomList" resultType="RoomDto">
+		SELECT * FROM CHAT_ROOM ORDER BY roomID
+	</select>
+	
+	<select id="isRoom" parameterType="String" resultType="String">
+		SELECT userID FROM CHAT_ROOM WHERE userID = #{userID}
+	</select>
+	
+	<insert id="makeRoom" parameterType="String">
+		INSERT INTO CHAT_ROOM
+		(userID) VALUES (#{userID})
+	</insert>
+	
+	<select id="chatLoadNewRoom" parameterType="int" resultType="RoomDto">
+		SELECT * FROM CHAT_ROOM WHERE roomID > #{roomID}
+	</select>
+</mapper>

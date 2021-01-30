@@ -1,0 +1,433 @@
+/* 소개페이지 모든 css*/
+
+@charset "utf-8";
+/* reset.css */
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #333;
+}
+img {
+  border: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a:link {
+  text-decoration: none;
+  color: #000000;
+}
+a:hover {
+  color: #000000;
+}
+a:visited {
+  color: #333;
+}
+fieldset {
+  border: none;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+}
+#header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  width: 100%;
+  height: 85px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease-out;
+}
+
+#header .h_info {
+  position: absolute;
+  top: 33px;
+  right: 160px;
+}
+#header .h_info > li {
+  float: left;
+  margin-right: 50px;
+}
+#header .h_info > li a {
+  color: #fff;
+  font-size: 14px;
+  width: auto;
+}
+#header .h_info > li:last-child {
+  margin-right: 0px;
+}
+.fixed {
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+#footer {
+	width:100%;
+    position: absolute;
+    bottom: 0;
+    background: #5eaeff;
+}
+#footer .footer_logo {
+  float: left;
+  margin: 27px 0 0 205px;
+  opacity: 0.5;
+}
+#footer .footer_left {
+  float: left;
+  margin: 39px 0 0 150px;
+  width: 500px;
+  height: 47px;
+}
+#footer .footer_nav {
+  float: left;
+}
+#footer .footer_nav li {
+  float: left;
+  margin-right: 12px;
+  padding-right: 12px;
+  border-right: 1px solid #cdcdcd;
+  line-height: 10px;
+}
+#footer .footer_nav li a {
+  color: #cdcdcd;
+  font-size: 15px;
+}
+#footer .footer_nav li:last-child {
+  margin-right: 0px;
+  padding-right: 0px;
+  border-right: 0px;
+}
+#footer .address {
+  float: left;
+  margin-top: 8px;
+  color: #cdcdcd;
+  font-size: 14px;
+}
+#footer .address img {
+  opacity: 0.6;
+}
+#footer .familysite {
+  float: right;
+  margin: 30px 432px 0 0;
+  width: 262px;
+  height: 39px;
+}
+
+/* main.css */
+#con01_slide {
+  float: left;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url('../img/h_slide1.png');
+  background-size: cover;
+}
+.slider01_txt {
+  margin-top: 15%;
+  width: 100%;
+  text-align: center;
+}
+.slider01_txt h1 {
+  color: #fff;
+  font-size: 65px;
+}
+.slider01_txt p {
+  padding-top: 1.5%;
+  padding-bottom: 8%;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.4em;
+}
+.mouse_icon {
+  width: 25px;
+  height: auto;
+  margin: 0 auto;
+}
+/*con02 서비스 소개*/
+#con02_intro {
+  float: left;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+#con02_intro .con02_in {
+  margin: 0 auto;
+  width: 1290px;
+  height: 100%;
+}
+#con02_intro .con02_in .intro_ttl {
+  margin: 0 auto;
+  margin-top: 140px;
+  width: 100%;
+  text-align: center;
+}
+#con02_intro .con02_in .intro_ttl h3 {
+  color: #000;
+  font-size: 40px;
+}
+#con02_intro .con02_in .intro_ttl p {
+  margin-top: 10px;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.3em;
+}
+#con02_intro .con02_in .intro_box {
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 1236px;
+  height: 350px;
+  text-align: center;
+}
+#con02_intro .con02_in .intro_box > li {
+  float: left;
+  width: 400px;
+  height: 100%;
+  margin-right: 12px;
+}
+#con02_intro .con02_in .intro_box > li:last-child {
+  margin-right: 0px;
+}
+#con02_intro .con02_in .intro_box h4 {
+  margin-top: 150px;
+  color: #fff;
+  font-size: 30px;
+}
+
+#con02_intro .con02_in .intro_box p {
+  margin-top: 5px;
+  color: #fff;
+  font-size: 20px;
+}
+
+#con02_intro .con02_in .intro_box span {
+  margin-top: 70px;
+  display: block;
+}
+#con02_intro .con02_in .intro_box span a {
+  color: #fff;
+  font-size: 40px;
+}
+#con02_intro .con02_in .intro_box .intro_box00 {
+  background: url(../img/con02_box00.gif) no-repeat;
+  background-size: cover;
+}
+#con02_intro .con02_in .intro_box .intro_box00:hover {
+  background: url(../img/con02_box00_hover_01.jpg) no-repeat;
+  transition: ease-out 0.5s;
+}
+#con02_intro .con02_in .intro_box .intro_box00:hover h4 {
+  transform: scale(2, 2);
+  transition: ease-in 0.5s;
+}
+#con02_intro .con02_in .intro_box .intro_box01 {
+  background: url(../img/con02_box01.gif) no-repeat;
+  background-size: cover;
+}
+#con02_intro .con02_in .intro_box .intro_box01:hover {
+  background: url(../img/con02_box00_hover_02.jpg) no-repeat;
+  transition: ease-out 0.5s;
+}
+#con02_intro .con02_in .intro_box .intro_box01:hover h4 {
+  transform: scale(2, 2);
+  transition: ease-in 0.5s;
+}
+#con02_intro .con02_in .intro_box .intro_box02 {
+  background: url(../img/con02_box02.gif) no-repeat;
+  background-size: cover;
+}
+#con02_intro .con02_in .intro_box .intro_box02:hover {
+  background: url(../img/con02_box00_hover_03.jpg) no-repeat;
+  transition: ease-out 0.5s;
+}
+#con02_intro .con02_in .intro_box .intro_box02:hover h4 {
+  transform: scale(1.1, 1.1);
+  transition: ease-in 0.5s;
+}
+
+#con03_notice {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+#con03_notice .con03_right {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: url(../img/con03_background.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#con03_notice .con03_right .img img {
+  width: 100%;
+  height: 100%;
+}
+
+#con03_notice .con03_left {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: #f2f3f7;
+}
+
+#con03_notice .con03_left .ttl {
+  position: relative;
+  top: 200px;
+  left: 210px;
+  z-index: 100;
+}
+
+#con03_notice .con03_left .ttl h2 {
+  font-size: 40px;
+}
+
+#con03_notice .con03_left .ttl p {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+#con03_notice .box_ul {
+    position: absolute;
+    top: 52%;
+    left: 25%;
+    width: 1030px;
+    height: 260px;
+    background-color: #fff;
+    z-index: 1;
+    text-align: center;
+}
+
+#con03_notice .box_ul li {
+    padding-top: 35px;
+    float: left;
+    width: 330px;
+    height: 100%;
+    margin-right: 20px;
+    border-right: 3px solid #f2f3f7;
+}
+
+#con03_notice .box_ul li:last-child {
+  margin-right: 0px;
+  border-right: 0px solid #f2f3f7;
+}
+
+#con03_notice .box_ul li h4 {
+  padding-top: 15px;
+  line-height: 18px;
+  font-size: 22px;
+}
+
+#con03_notice .box_ul li p {
+  font-size: 14px;
+}
+
+#con03_notice .box_ul li img{
+   width:100px;
+   height:100px;
+}
+
+#con04_end {
+  position: relative 0 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+#con04_end .con04_left {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+#con04_end .con04_left .img {
+  float: left;
+  width: 630px;
+  height: 420px;
+  margin-top: 17%;
+  margin-left: 20%;
+}
+
+#con04_end .con04_left .img img {
+  width: 100%;
+  height: 100%;
+}
+
+#con04_end .con04_right {
+  position: relative 0 0;
+}
+
+#con04_end .con04_right .ttl {
+  position: relative;
+  top: 200px;
+  left: 100px;
+}
+
+#con04_end .con04_right .ttl .btn {
+  margin-top: 30px;
+  padding: 15px 138px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4c9df8;
+  border: none;
+}
+
+#con04_end .con04_right .ttl h2 {
+  font-size: 40px;
+}
+
+#con04_end .con04_right .ttl p {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+#menu {
+  position: fixed;
+  top: 420px;
+  right: 35px;
+  width: 20px;
+  height: 130px;
+}
+#menu_circle {
+  float: left;
+  width: 20px;
+  height: 100%;
+  z-index: 9999;
+}
+#menu_circle li {
+  width: 10px;
+  height: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+#menu_circle li:hover,
+.active {
+  background: #ccc;
+  transition: 0.2s ease-out;
+}
+/*페이지 내릴때마다 글자 보이도록 바꾸기, 특정 스크롤높이에서 배경색상변하도록 바꾸기*/

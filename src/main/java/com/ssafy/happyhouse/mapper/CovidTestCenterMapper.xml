@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.CovidTestCenterMapper">
+
+<select id="getCovidTestCenterList" parameterType="String" resultType="CovidTestCenterDto">
+	select * from covidtestcenter
+	where (city, gugun) in (select distinct left(city, 2), gugun
+							from baseaddress b
+							where b.dongcode=(select code from houseinfo
+												where no = #{no}
+												)
+							)
+</select>
+
+</mapper>

@@ -1,0 +1,49 @@
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+ul, li {
+	list-style: none;
+}
+
+.btn-outline-primary {
+	border: 1px solid #1abc9c;
+	color: #1abc9c;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active,
+	.btn-outline-primary:visited {
+	color: #fff;
+	background: #1abc9c;
+	border: 1px solid #1abc9c;
+}
+
+.btn-outline-primary a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn-outline-secondary a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.logo {
+	color: #1abc9c;
+	font-size: 20px;
+}
+
+.title {
+	color: #1abc9c;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+#searchKeyword{
+	display: inline;
+	width: 300px;
+}
+
+
+
+

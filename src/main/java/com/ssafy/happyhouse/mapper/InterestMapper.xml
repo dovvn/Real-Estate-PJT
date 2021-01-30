@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.InterestMapper">
+	
+<insert id="setInterest" parameterType="InterestDto">
+	insert into interest (userid, no) values (#{userid}, #{no})
+</insert>
+
+<delete id="deleteInterest" parameterType="InterestDto">
+	delete from interest where userid = #{userid} and no = #{no}
+</delete>
+
+<select id="getInterest" parameterType="String" resultMap="rrr">
+	select i.userid, i.no, d.area, d.floor, d.dealAmount, f.AptName, f.img
+	from housedeal d JOIN interest i on d.no = i.no JOIN houseinfo f on d.no = f.no
+	where i.userid = #{userid}
+</select>
+
+<select id="chkInterest" parameterType="InterestDto" resultType="InterestDto">
+	select * from interest where userid = #{userid} and no = #{no}
+</select>
+
+<resultMap type="InterestDto" id="rrr">
+	<result property="no" column="no"/>
+	<result property="area" column="area"/>
+	<result property="floor" column="floor"/>
+	<result property="dealAmount" column="dealAmount"/>
+	<result property="aptName" column="aptName"/>
+	<result property="img" column="img"/>
+</resultMap>
+</mapper>

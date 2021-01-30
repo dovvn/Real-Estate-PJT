@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.QnaMapper">
+
+<insert id="write" parameterType="QnaDto"> <!-- 질문 작성 -->
+	INSERT INTO qna 
+	(BTITLE, USERID, BREADCNT, BWRITEDATE, BCONTENT)
+	VALUES(#{btitle},#{userid},#{breadcnt},NOW(),#{bcontent})
+</insert>
+
+<update id="updateReadcnt" parameterType="int"> <!-- 조회수 증가 -->
+	UPDATE qna SET BREADCNT = BREADCNT+1 WHERE BNUM=#{bnum}
+</update>
+
+<select id="getBoard" parameterType="int" resultType="QnaDto"> <!-- 질문 상세 -->
+	SELECT * FROM qna WHERE BNUM=#{bnum}
+</select>
+
+<select id="getBoardList" resultType="QnaDto"> <!-- 질문 전체 목록 -->
+	SELECT * FROM qna WHERE questionnum is null
+</select>
+
+<update id="update" parameterType="QnaDto"><!-- 질문 수정 -->
+	update qna set btitle=#{btitle}, bcontent=#{bcontent}, bwritedate=NOW() where bnum=#{bnum}
+</update>
+
+<delete id="delete" parameterType="int"> <!--  질문 삭제 -->
+	delete from qna where bnum = #{bnum}
+</delete>
+
+<!-- 질문 검색 -->
+<select id="searchTitle" parameterType="String" resultType="QnaDto">
+	SELECT * FROM qna WHERE btitle like #{keyword} and questionnum is null
+</select>
+
+<select id="searchContent" parameterType="String" resultType="QnaDto">
+	SELECT * FROM qna WHERE bcontent like #{keyword} and questionnum is null
+</select>
+
+<select id="searchWriter" parameterType="String" resultType="QnaDto">
+	SELECT * FROM qna WHERE userid like #{keyword} and questionnum is null
+</select>
+
+<!-- 답변 기능 -->
+<insert id="ansWrite" parameterType="QnaDto">
+	INSERT INTO qna 
+	(BTITLE, USERID, BWRITEDATE, BCONTENT, QUESTIONNUM)
+	VALUES(#{btitle},#{userid}, NOW(),#{bcontent},#{questionnum})
+</insert>
+
+<update id="ansUpdate" parameterType="QnaDto">
+	update qna set btitle=#{btitle}, bcontent=#{bcontent}, bwritedate=NOW() where bnum=#{bnum}
+</update>
+
+<delete id="ansDelete" parameterType="int">
+	delete from qna where bnum = #{bnum}
+</delete>
+
+<select id="getAnsList" parameterType="int" resultType="QnaDto"> <!-- 질문 전체 목록 -->
+	SELECT * FROM qna WHERE questionnum = #{questionnum}
+</select>
+
+<select id="getFAQList" resultType="QnaDto"> 
+	SELECT * FROM qna WHERE isFAQ is true
+</select>
+
+</mapper>

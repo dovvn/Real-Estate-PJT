@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<bean id="dddd" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+			<property name="driverClassName" value="${spring.datasource.driverClassname}"/>
+			<property name="url" value="${spring.datasource.driverClassname}"/>
+			<property name="username" value="${spring.datasource.url}"/>
+			<property name="password" value="${spring.datasource.password}"/>
+		</bean>	
+		
+		<!-- mybatis 등록 -->
+		<bean id="ffff" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dddd"/>
+			<property name="typeAliasesPackage" value="com.ssafy.happyhouse.dto"/> <!-- 모든 dto클래스 -->
+			<property name="mapperLocations" value="classpath:/**/mapper/*.xml"/>
+		</bean>
+		
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref="ffff"/>
+		</bean>
+</beans>

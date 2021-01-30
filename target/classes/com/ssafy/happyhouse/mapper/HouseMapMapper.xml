@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.HouseMapMapper">
+
+<select id="getSido" resultType="SidoGugunCodeDto">
+	SELECT left(sido_code,2) sido_code, sido_name FROM sidocode
+</select>
+
+<select id="getGugunInSido" parameterType="String" resultType="SidoGugunCodeDto">
+	SELECT left(gugun_code,5) gugun_code, gugun_name FROM guguncode
+	where left(gugun_code,2) = #{sido} ORDER BY gugun_code
+</select>
+
+<select id="getDongInGugun" parameterType="String" resultType="HouseInfoDto">
+	SELECT distinct dong, code from baseaddress where dongcode = #{gugun}
+</select>
+
+<select id="getAptInDong" parameterType="String" resultType="HouseInfoDto">
+	SELECT no,dong,AptName,code,jibun FROM houseinfo 
+	WHERE dong = #{dong} ORDER BY AptName
+</select>
+
+<select id="getDealInfo" resultType="HouseDealDto">
+	SELECT d.no, d.dealAmount, d.dealYear, d.dealMonth, d.dealDay, 
+	d.area, d.floor, d.type, d.rentMoney,
+	i.dong, i.aptName, i.jibun, i.lat, i.lng, i.img
+	FROM housedeal d, houseinfo i
+	WHERE d.no=i.no
+</select>
+
+<select id="getDealInfoOne" parameterType="int" resultType="HouseDealDto">
+	SELECT d.no, d.dealAmount, d.dealYear, d.dealMonth, d.dealDay, 
+	d.area, d.floor, d.type, d.rentMoney,
+	i.dong, i.aptName, i.jibun, i.lat, i.lng, i.img
+	FROM housedeal d, houseinfo i
+	WHERE d.no=i.no and d.no = #{no}
+</select>
+
+<select id="getDealInfoByAptName" parameterType="String" resultType="HouseDealDto">
+	SELECT d.no, d.dealAmount, d.dealYear, d.dealMonth, d.dealDay, 
+	d.area, d.floor, d.type, d.rentMoney,
+	i.dong, i.aptName, i.jibun, i.lat, i.lng, i.img
+	FROM housedeal d, houseinfo i
+	WHERE d.no=i.no AND i.aptName like CONCAT('%',#{aptName},'%') LIMIT 20
+</select>
+
+<select id="getDealInfoByDong" parameterType="String" resultType="HouseDealDto">
+	SELECT d.no, d.dealAmount, d.dealYear, d.dealMonth, d.dealDay, 
+	d.area, d.floor, d.type, d.rentMoney, 
+	i.dong, i.aptName, i.jibun, i.lat, i.lng, i.img
+	FROM housedeal d, houseinfo i
+	WHERE d.no=i.no AND i.dong LIKE #{dong} LIMIT 20
+</select>
+
+</mapper>

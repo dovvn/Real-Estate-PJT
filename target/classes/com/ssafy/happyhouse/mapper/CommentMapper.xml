@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.CommentMapper">
+	<select id="selectCommentCount" resultType="int">
+		SELECT COUNT(*) FROM comment WHERE BNUM=#{bnum}
+	</select>
+	<select id="selectCommentList" resultType="CommentDto">
+		SELECT * FROM comment WHERE BNUM=#{bnum};
+	</select>
+	<insert id="insertComment" parameterType="CommentDto">
+		INSERT INTO comment(BNUM, CWRITER, CCONTENT, CWRITEDATE)
+		VALUES(#{bnum},#{cwriter},#{ccontent},NOW())
+	</insert>
+	<delete id="deleteComment" parameterType="CommentDto">
+		DELETE FROM comment WHERE cnum = #{cnum} and cwriter=#{cwriter}
+	</delete>
+</mapper>

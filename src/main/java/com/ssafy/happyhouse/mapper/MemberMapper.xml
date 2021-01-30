@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.MemberMapper">
+
+<select id="idCheck" parameterType="String" resultType="MemberDto">
+	SELECT * FROM userinfo WHERE userid = #{userid}
+</select>
+
+<select id="loginCheck" parameterType="MemberDto" resultType="MemberDto">
+	SELECT * FROM userinfo WHERE userid = #{userid} and userpw = #{userpw}
+</select>
+
+<insert id="join" parameterType="MemberDto">
+	INSERT INTO userinfo (userid, userpw, username, useremail, userphone)
+	VALUES (#{userid}, #{userpw}, #{username}, #{useremail}, #{userphone})
+</insert>
+
+<select id="search" resultType="MemberDto">
+	SELECT * FROM userinfo
+</select>
+
+<select id="searchName" parameterType="String" resultType="MemberDto">
+	SELECT * FROM userinfo where username like #{username}
+</select>
+
+<update id="update" parameterType="MemberDto">
+	UPDATE userinfo SET userpw = #{userpw}, username = #{username}, useremail = #{useremail}, 
+		userphone = #{userphone}
+	WHERE userid = #{userid}
+</update>
+
+<update id="updateById" parameterType="MemberDto">
+	UPDATE userinfo SET userpw = #{userpw}
+	WHERE userid = #{userid}
+</update>
+
+<delete id="delete" parameterType="String">
+	DELETE FROM userinfo WHERE userid = #{userid}
+</delete>
+
+<select id="findUser" parameterType="MemberDto" resultType="MemberDto">
+	SELECT * FROM userinfo WHERE userid = #{userid} and username = #{username} and userphone = #{userphone}
+</select>
+
+<update id="modifyRole" parameterType="MemberDto">
+	UPDATE userinfo SET role = #{role}
+	WHERE userid = #{userid}
+</update>
+</mapper>

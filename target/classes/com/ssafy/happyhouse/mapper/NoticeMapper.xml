@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.NoticeMapper">
+
+<select id="selectTotalCount" resultType="int">
+	SELECT COUNT(*) FROM notice
+</select>
+
+<select id="selectPage" parameterType="hashMap" resultType="NoticeDto">
+	SELECT * FROM notice ORDER BY bnum DESC LIMIT #{startRow}, #{COUNT_PER_PAGE}
+</select>
+
+<insert id="write" parameterType="NoticeDto">
+	INSERT INTO notice 
+	(BTITLE, USERID, BREADCNT, BWRITEDATE, BCONTENT)
+	VALUES(#{btitle},#{userid},#{breadcnt},NOW(),#{bcontent})
+</insert>
+
+<update id="updateReadcnt" parameterType="int">
+	UPDATE notice SET BREADCNT = BREADCNT+1 WHERE BNUM=#{bnum}
+</update>
+
+<select id="selectBoard" parameterType="int" resultType="NoticeDto">
+	SELECT * FROM notice WHERE BNUM=#{bnum}
+</select>
+
+<update id="update" parameterType="NoticeDto">
+	update notice set btitle=#{btitle}, bcontent=#{bcontent}, bwritedate=NOW() where bnum=#{bnum}
+</update>
+
+<delete id="delete" parameterType="int">
+	delete from notice where bnum = #{bnum}
+</delete>
+
+<select id="searchTitle" parameterType="String" resultType="NoticeDto">
+	SELECT * FROM notice WHERE btitle like #{title}
+</select>
+
+<select id="searchContent" parameterType="String" resultType="NoticeDto">
+	SELECT * FROM notice WHERE bcontent like #{keyword}
+</select>
+
+<select id="searchWriter" parameterType="String" resultType="NoticeDto">
+	SELECT * FROM notice WHERE userid like #{userid}
+</select>
+</mapper>

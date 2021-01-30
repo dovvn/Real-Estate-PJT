@@ -1,4 +1,11 @@
-# 🏠 부동산 매물 사이트 
+<h1 align="center">부동산 매물 사이트🏠</h1>
+
+<p align="center">
+  <img width="600px;" src="https://user-images.githubusercontent.com/59414210/106365481-3f5a3080-6379-11eb-8869-82fead75d734.png" />
+</p>
+
+<br>
+
 > 프로젝트 기간: 11/19 - 11/26  
 > [프로젝트 일정표 바로가기](https://www.notion.so/HAPPY-HOUSE-520ad8fe139b47db8c18fb1d4c90b9d8)     
 
